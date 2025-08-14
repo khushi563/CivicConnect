@@ -1,0 +1,66 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <!-- Brand Logo -->
+    <a class="navbar-brand" href="{% url 'cases:home' %}" id="nav_anchor">
+      <img src="{% static 'assets/case logo.png' %}" alt="Logo" id="nav_logo">
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left Side -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="left_side">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cases:home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cases:client_list' %}">Clients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cases:lawyer_list' %}">Lawyers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cases:case_list' %}">Cases</a>
+        </li>
+      </ul>
+
+      <!-- Right Side -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Hello, {{ user.username }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="{% url 'cases:home' %}">Home</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <form method="post" action="{% url 'cases:logout' %}" class="d-inline">
+                  {% csrf_token %}
+                  <button type="submit" class="dropdown-item">Logout</button>
+                </form>
+              </li>
+            </ul>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cases:login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cases:register' %}">Register</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,79 @@
+.box2 {
+    border: 1px solid black;
+    height: 85vh;
+    width: 100vw;
+    margin-bottom: 7px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Dark overlay */
+.box2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Overlay content */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    width: 90%;
+    color: black;
+    pointer-events: none;
+}
+
+.hero-content .btn {
+    pointer-events: auto;
+}
+/* 3D effect only for outer box */
+.content-box {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.2),
+        0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons - keep modern hover effects */
+.animated-btn {
+    min-width: 200px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

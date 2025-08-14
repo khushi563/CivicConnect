@@ -1,0 +1,69 @@
+/* Reset spacing */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar container */
+.navbar {
+    height: auto;
+    min-height: 11vh;
+    width: 100vw;
+}
+
+/* Logo anchor */
+#nav_anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 11vh;
+}
+
+/* Logo image */
+#nav_logo {
+    height: 9vh;
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%; /* Optional: Remove if you don't want round logo */
+}
+
+/* Navbar link styling */
+.nav-link {
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+/* Left side nav links */
+#left_side a {
+    font-size: 17px;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    background-color: #212529;
+    border: none;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #fff;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Adjust spacing in nav items */
+.navbar-nav .nav-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.75rem;
+    padding: 0 6px;
+}
