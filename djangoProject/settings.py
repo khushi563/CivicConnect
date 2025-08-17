@@ -40,7 +40,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://civicconnect-0ag3.onrender.com",
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
