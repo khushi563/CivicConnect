@@ -26,10 +26,18 @@ SECRET_KEY = 'django-insecure-&r^qatb7=!fk#yp88i3y^j_&^w3wee#k9u=hb^ake+^ywu9n0j
 DEBUG = True
 SITE_ID = 1
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+SITE_ID = 1
+
 ALLOWED_HOSTS = [
     "civicconnect-0ag3.onrender.com",
     "localhost",
     "127.0.0.1",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://civicconnect-0ag3.onrender.com",
 ]
 
 
@@ -156,14 +164,3 @@ if not DEBUG:
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-ALLOWED_HOSTS = [
-    "civicconnect-0ag3.onrender.com",
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://civicconnect-0ag3.onrender.com",
-]
-
-
-    
