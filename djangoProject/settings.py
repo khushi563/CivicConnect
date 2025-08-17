@@ -157,8 +157,13 @@ if not DEBUG:
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://civicconnect-0ag3.onrender.com"
+ALLOWED_HOSTS = [
+    "civicconnect-0ag3.onrender.com",
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://civicconnect-0ag3.onrender.com",
+]
+
 
     
