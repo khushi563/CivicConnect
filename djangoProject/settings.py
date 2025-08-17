@@ -153,6 +153,7 @@ if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://civicconnect-0ag3.onrender.com'
+    "https://civicconnect-0ag3.onrender.com"
 ]
+
     
