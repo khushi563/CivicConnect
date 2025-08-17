@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-&r^qatb7=!fk#yp88i3y^j_&^w3wee#k9u=hb^ake+^ywu9n0j
 DEBUG = True
 SITE_ID = 1
 
-ALLOWED_HOSTS = ['law-firm-management-system-django.onrender.com', 'https://civicconnect-0ag3.onrender.com']
+ALLOWED_HOSTS = [
+    "civicconnect-0ag3.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+
 
 # Application definition
 
